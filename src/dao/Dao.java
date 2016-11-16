@@ -35,8 +35,10 @@ public class Dao {
 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
+            System.out.println("error!");
         } catch (SQLException e) {
             e.printStackTrace();
+            System.out.println("error!");
         }
         return conn;
     }
@@ -48,6 +50,7 @@ public class Dao {
                 conn.close();
             }catch(Exception e){
                 e.printStackTrace();
+                System.out.println("error!");
             }
         }
     }
