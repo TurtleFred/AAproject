@@ -27,7 +27,7 @@ function click3() {
     <form name=Check method=post action="">
     <center>
     <h2>主界面</h2>
-     你好，${userName } &&
+     你好，
      <%  
               String name=request.getParameter("userName");  
               session.setAttribute("userName",name);

@@ -25,7 +25,6 @@ public class Joiner {
         this.real_cost=real_cost;
         float pay = real_cost - ideal_cost;
         this.pay=pay;
-        //添加入表中
     }
     
     public String getActivity() {

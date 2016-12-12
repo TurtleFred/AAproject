@@ -21,14 +21,14 @@ public class Act extends ActionSupport {
     private static final long serialVersionUID = 1L;
 
     private String activity , pName , pin;
-    private float cost , per_cost , ideal_cost , real_cost;
+    private float cost , per_cost , ideal_cost , realCost;
     private int people , real_num , count;
     private String            resultMsg;
     
     Create cre = new Create();
     Insert insertConn = new Insert();
     SQL_word word = new SQL_word();
-    
+    Map<String, Object> session = ActionContext.getContext().getSession();
     //对应的jsp：create_act.jsp
     public String create() {
         resultMsg = null;
@@ -44,16 +44,13 @@ public class Act extends ActionSupport {
             return "checkFailure";
         }
         //因为只需要添加一个活动，所以暂不需要用数组存，直接赋值即可
-        count = insertConn.save(word.Insert_Act(activity,pin,cost,people,pName,ideal_cost,real_cost));
+        //insertConn.save(word.Insert_Act(activity,pin,cost,people,pName));
+        //count = insertConn.save(word.Insert_Join(activity,pName,ideal_cost,real_cost));
         //存session,传jsp页面
-        Map<String, Object> session = ActionContext.getContext().getSession();
         session.put("activity", activity);
         session.put("pin", pin);
         session.put("cost", cost);
         session.put("people", people);
-        session.put("pName", pName);
-        session.put("ideal_cost", ideal_cost);
-        session.put("real_cost", real_cost);
         resultMsg = "创建成功";
         return "createSuccess";
     }
@@ -61,17 +58,27 @@ public class Act extends ActionSupport {
     public String createJoiner() {
         
         //因为只需要添加一个活动，所以暂不需要用数组存，直接赋值即可
-        count = insertConn.save(word.Insert_Act(activity,pin,cost,people,pName,ideal_cost,real_cost));
-        count = insertConn.save(word.Insert_Join(activity,pName,ideal_cost,real_cost));
+        //count = insertConn.save(word.Insert_Act(activity,pin,cost,people,pName));
+        System.out.println("(before i)activity is : " + activity);
+        System.out.println("(before i)cost is : " + cost);
+        System.out.println("(before i)people is : " + people);
+        System.out.println("(before i)realCost is : " + realCost);
+        System.out.println("(before i)pName is : " + pName);
+        String[] s = pName.split(",");
+        for(int i=0;i<people;i++) {
+            System.out.println("get into i");
+        count = insertConn.save(word.Insert_Join(activity,s[i],ideal_cost,realCost));
+        System.out.println("(after i)pName is : " + s[i]);
+//        session.put("pName", s[i]);
+//        session.put("real_cost", real_cost);
+        }
         //存session,传jsp页面
-        Map<String, Object> session = ActionContext.getContext().getSession();
         session.put("activity", activity);
         session.put("pin", pin);
         session.put("cost", cost);
         session.put("people", people);
-        session.put("pName", pName);
         session.put("ideal_cost", ideal_cost);
-        session.put("real_cost", real_cost);
+        
         resultMsg = "创建成功";
         return "createJSuccess";
     }
@@ -134,20 +141,21 @@ public class Act extends ActionSupport {
         this.pName = pName;
     }
     
-    public float getideal_cost() {
+    public float getIdeal_cost() {
         System.out.println(ideal_cost+"*获取总金额1");
         return ideal_cost;
     }
-    public void setideal_cost(float ideal_cost) {
+    public void setIdeal_cost(float ideal_cost) {
         this.ideal_cost = ideal_cost;
     }
     
-    public float getreal_cost() {
-        System.out.println(real_cost+"*获取总金额1");
-        return real_cost;
+    public float getRealCost() {
+        System.out.println(realCost+"*获取总金额1");
+        return realCost;
     }
-    public void setreal_cost(float real_cost) {
-        this.real_cost = real_cost;
+    public void setRealCost(float realCost) {
+        System.out.println(realCost+"*设置金额1");
+        this.realCost = realCost;
     }
     
     public String getResultMsg() {

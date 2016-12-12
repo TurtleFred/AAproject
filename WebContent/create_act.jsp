@@ -5,8 +5,25 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>建立活动</title>
-
 </head>
+
+<script type="text/javascript">
+
+function addpin() {
+         document.getElementById("p").style.display="";
+         document.getElementById("pind").style.display="";
+         document.getElementById("pina").style.display="none";
+}
+
+function delpin() {
+    document.getElementById("p").style.display="none";
+    document.getElementById("pind").style.display="none";
+    document.getElementById("pina").style.display="";
+}
+
+
+</script>
+
 <body>
     <form action="create.action" method="post">
         <table align="center">
@@ -22,19 +39,28 @@
                 <td> 总金额： <input type="text" name="cost" /></td>
             </tr>
             <tr>
-                <td>活动密钥（选填）： <input type="text" name="pin" /></td>
+                <td>活动密钥（选填）：  <input type=text id=p name=pin value="" style="display:none"><input type=button value="添加密钥" id=pina onclick=addpin()><input type=button value="取消" id=pind style="display:none" onclick=delpin() ></td>
             </tr>
             <tr>
                 <td> 总人数： <input type="text" name="people" /></td>
             </tr>
             <tr>
-                <td> 参加者： <input type="text" name="pName" /></td>
-                <td> 应付： <input type="text" size=5 name="ideal_cost" /></td>
-                <td> 实付： <input type="text" size=5 name="real_cost" /></td>
+                <td>请选择活动模式：
+                    <input type="radio" name="act_type" value="活动后结账" checked="checked" />活动后结账
+                    <input type="radio" name="act_type" value="活动前预估" />活动前预估
+                </td>
+            </tr>
+            <tr>
+                <td>请选择支付策略：
+                    <input type="radio" name="pay_type" value="标准AA制" checked="checked" />标准AA制
+                    <input type="radio" name="pay_type" value="取整AA制" />取整AA制
+                    <input type="radio" name="pay_type" value="女神免单" />女神免单
+                    <input type="radio" name="pay_type" value="自定义支付" />自定义支付
+                </td>
             </tr>
             <tr align="center">
                 <td colspan="2"><input type="reset" value="重置"/></td>
-                <td colspan="2"><input type="submit" value="确定"/></td>
+                <td colspan="2"><input type="submit" value="确认"/></td>
             </tr>
         </table>
     </form>

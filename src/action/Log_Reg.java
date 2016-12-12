@@ -28,6 +28,7 @@ public class Log_Reg extends ActionSupport {
     
     Regist regImpl = new Regist();
     SQL_word word = new SQL_word();
+    Map<String, Object> session = ActionContext.getContext().getSession();
     
     //注册 对应jsp:regist.jsp
     public String regist() {
@@ -49,7 +50,6 @@ public class Log_Reg extends ActionSupport {
             resultInt = regImpl.regist(userName, passWord);
             if (1 == resultInt) {
                 // 1. 将用户信息保存到Session中。
-                Map<String, Object> session = ActionContext.getContext().getSession();
                 session.put("userName", userName);
                 session.put("passWord", passWord);
                 // 2. 返回信息
@@ -81,6 +81,8 @@ public class Log_Reg extends ActionSupport {
 
         if (1 == resultInt) {
             resultMsg = "登录成功";
+            session.put("userName", userName);
+            session.put("passWord", passWord);
             return "loginSuccess";
         } else {
             resultMsg = "登录失败";
@@ -112,5 +114,9 @@ public class Log_Reg extends ActionSupport {
 
     public void setResultMsg(String resultMsg) {
         this.resultMsg = resultMsg;
+    }
+    public void setSession(Map<String, Object> session) {
+        // TODO Auto-generated method stub
+        this.session=session;
     }
 }

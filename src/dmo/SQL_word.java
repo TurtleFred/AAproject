@@ -35,7 +35,7 @@ public class SQL_word {
     //活动相关sql语句
     
     //activity表插入活动
-    public String Insert_Act(String activity , String pin , float cost , int people , String pName , float ideal_cost , float real_cost) {
+    public String Insert_Act(String activity , String pin , float cost , int people , String pName) {
         String sql = "insert into activity(activity,pin_num,cost,total_people,name) " + " values (" + "'"
                 + activity + "','" + pin + "','" + cost +"','" + people + "','" +pName + "')";
         System.out.println(sql);
@@ -62,9 +62,9 @@ public class SQL_word {
             return sql;    
     }
         //Joiner表插入
-        public String Insert_Join(String activity , String name , float ideal_cost , float real_cost) {
+        public String Insert_Join(String activity , String name , float ideal_cost , float Pay) {
             String sql = "insert into Joiner(activity,name,ideal_cost,real_cost) " + " values (" + "'"
-                    + activity + "','" + name + "','" + ideal_cost +"','" + real_cost +  "')";
+                    + activity + "','" + name + "','" + ideal_cost +"','" + Pay +  "')";
             return sql;
         }
 }

@@ -18,7 +18,8 @@ public class Create {
     
     //´´½¨£¬insert
     public int create(String activity , String pin , float cost , int people , String people_name , float ideal_cost , float real_cost) {
-        int count = insertConn.save(word.Insert_Act(activity,pin,cost,people,people_name,ideal_cost,real_cost));
+        int count = insertConn.save(word.Insert_Act(activity,pin,cost,people,people_name));
+        System.out.println("create in package impl , Create.java");
         return count;
     }
 }

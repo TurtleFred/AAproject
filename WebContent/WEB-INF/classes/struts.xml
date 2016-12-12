@@ -13,7 +13,7 @@
         </action>
         <action name="create" class="action.Act" method="create">
             <result name="checkFailure">/error.jsp</result>
-            <result name="createSuccess">/show_act.jsp</result>
+            <result name="createSuccess">/test_show.jsp</result>
         </action>
         <action name="createJoiner" class="action.Act" method="createJoiner">
             <result name="checkFailure">/error.jsp</result>
@@ -23,5 +23,6 @@
             <result name="checkFailure">/error.jsp</result>
             <result name="checkSuccess">/check_act.jsp</result>
         </action>
+        
     </package>
 </struts>
