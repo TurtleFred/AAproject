@@ -22,6 +22,7 @@
             <tr>
                 <td><%=session.getAttribute("activity"+i)%></td>
                 <td><%=session.getAttribute("pay"+i)%></td>
+                
             </tr><%} %>
     </table>
     请确认活动信息后选择操作:

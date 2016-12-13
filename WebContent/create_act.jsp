@@ -9,17 +9,7 @@
 
 <script type="text/javascript">
 
-function addpin() {
-         document.getElementById("p").style.display="";
-         document.getElementById("pind").style.display="";
-         document.getElementById("pina").style.display="none";
-}
 
-function delpin() {
-    document.getElementById("p").style.display="none";
-    document.getElementById("pind").style.display="none";
-    document.getElementById("pina").style.display="";
-}
 
 
 </script>
@@ -39,9 +29,6 @@ function delpin() {
                 <td> 总金额： <input type="text" name="cost" /></td>
             </tr>
             <tr>
-                <td>活动密钥（选填）：  <input type=text id=p name=pin value="" style="display:none"><input type=button value="添加密钥" id=pina onclick=addpin()><input type=button value="取消" id=pind style="display:none" onclick=delpin() ></td>
-            </tr>
-            <tr>
                 <td> 总人数： <input type="text" name="people" /></td>
             </tr>
             <tr>
@@ -53,11 +40,12 @@ function delpin() {
             <tr>
                 <td>请选择支付策略：
                     <input type="radio" name="payType" value="standard" checked="checked" />标准AA制
-                    <input type="radio" name="payType" value="restFree" />舍零AA制
-                    <input type="radio" name="payType" value="selfSet" />自定义支付
+                    <input type="radio" name="payType" value="rest" />舍零AA制
+                    <input type="radio" name="payType" value="self" />自定义支付
                 </td>
             </tr>
             <tr align="center">
+                <td colspan="2"><input type="button" value="返回" onclick="javascript :history.back(-1)" /></td>
                 <td colspan="2"><input type="reset" value="重置"/></td>
                 <td colspan="2"><input type="submit" value="确认"/></td>
             </tr>

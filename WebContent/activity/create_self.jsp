@@ -11,9 +11,8 @@
 </script>
 <script>
 function addpeople(a) {
-    
-        
-    var new_name = new Array(a);
+
+	var new_name = new Array(a);
     var new_ideal = new Array(a);
     var new_real = new Array(a);
     for (i=0;i<a;i++) {
@@ -29,8 +28,7 @@ function addpeople(a) {
         new_real[i].type="text";
         new_real[i].size=6;
         new_real[i].name="realCostt";
-        new_real[i].placeholder="应付金额";
-        
+        new_real[i].placeholder="已付金额";
         
         new_ideal[i].type="text";
         new_ideal[i].size=6;
@@ -38,8 +36,11 @@ function addpeople(a) {
         new_ideal[i].placeholder="应付金额";
         
         $("p").append(new_name[i]);
-        $("p").append("");
+        
+        $("p").append("已支付的金额为：");
         $("p").append(new_real[i]);
+        
+        $("p").append("本次AA理论支付：");
         $("p").append(new_ideal[i]);
         $("p").append("<br>");
     }
@@ -66,9 +67,9 @@ function addpeople(a) {
             <tr>
                 <td> 总人数：${people } <input type="hidden" name=people value=${people } /><script>Cost = ${cost }; people=${people }; per=Cost/people;</script><input type="hidden" name=ideal_cost value=${ideal_cost } /></td>
             </tr>
-            <tr><td>请确认活动信息后选择操作：</td></tr>
+            <tr><td>请确认活动信息后依次输入信息：</td></tr>
             
-            <tr><td><input type=button value="添加人员" id="addp" style="display:none" onclick=addpeople(1)><p><script>addpeople(6)</script></p></td></tr>
+            <tr><td><!-- <input type=button value="添加人员" id="addp" style="display:none" onclick=addpeople(1)> --><p><script>addpeople(people)</script></p></td></tr>
             
             <tr align="center">
                 <td colspan="2"><input type="button" value="重新编辑" onclick="location='create_act.jsp'"/></td>

@@ -62,9 +62,9 @@ public class SQL_word {
             return sql;    
     }
         //Joiner±Ì≤Â»Î
-        public String Insert_Join(String activity , String name , float ideal_cost , float Pay) {
+        public String Insert_Join(String activity , String name , float ideal , float Pay) {
             String sql = "insert into Joiner(activity,name,ideal_cost,real_cost) " + " values (" + "'"
-                    + activity + "','" + name + "','" + ideal_cost +"','" + Pay +  "')";
+                    + activity + "','" + name + "','" + ideal +"','" + Pay +  "')";
             return sql;
         }
 }

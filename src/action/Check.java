@@ -31,7 +31,7 @@ public class Check extends ActionSupport {
 
     private static final long serialVersionUID = 1L;
 
-    private String  activity;
+    private String  activity , str;
     private float ideal_cost , real_cost , pay;
 SQL_word word = new SQL_word();
     
@@ -104,7 +104,13 @@ SQL_word word = new SQL_word();
             setActivity(list.get(i).getActivity());
             session.setAttribute("activity"+i,activity);
             setPay(list.get(i).getPay());
-            session.setAttribute("pay"+i,pay);
+            if (pay >=0) {
+                str = "需退回" + pay + "元";
+            }
+            else {
+                str = "需交纳" + Math.abs(pay)+ "元";
+            }
+            session.setAttribute("pay"+i,str);
             System.out.println(list.get(i));
             System.out.println("get activity:"+list.get(i).getActivity());
             System.out.println("Session:" + session.getAttribute("activity"+i));

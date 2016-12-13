@@ -14,11 +14,23 @@
         </action>
         <action name="create" class="action.Act" method="create">
             <result name="checkFailure">/error.jsp</result>
-            <result name="createSuccess">/show_act.jsp</result>
+            <result name="createSelf">/activity/create_self.jsp</result>
+            <result name="createAfter1">/activity/create_after1.jsp</result>
+            <result name="createAfter2">/activity/create_after2.jsp</result>
+            <result name="createBefore1">/activity/create_before1.jsp</result>
+            <result name="createBefore2">/activity/create_before2.jsp</result>
         </action>
         <action name="createJoiner" class="action.Act" method="createJoiner">
             <result name="checkFailure">/error.jsp</result>
-            <result name="createJSuccess">/main.jsp</result>
+            <result name="createJSuccess">/Submit.jsp</result>
+        </action>
+        <action name="createBefore" class="action.Act" method="createBefore">
+            <result name="checkFailure">/error.jsp</result>
+            <result name="createJSuccess">/Submit.jsp</result>
+        </action>
+        <action name="createAfter" class="action.Act" method="createAfter">
+            <result name="checkFailure">/error.jsp</result>
+            <result name="createJSuccess">/Submit.jsp</result>
         </action>
         <action name="check_act" class="action.Check" method="check_act">
             <result name="checkFailure">/error.jsp</result>
