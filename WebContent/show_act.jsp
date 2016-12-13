@@ -22,14 +22,10 @@ function addpeople(a) {
         new_name[i].type="text";
         new_name[i].placeholder="在此添加成员";
         new_name[i].name="pName";
-        
-        
         new_ideal[i].type="text";
         new_ideal[i].size=6;
-        new_ideal[i].placeholder="应付金额";
-        //new_ideal.value=per;'
-        if(i==0)
-            new_ideal[i].name="realCost";
+        new_ideal[i].name="realCostt";
+        	new_ideal[i].placeholder="应付金额";
         
         $("p").append(new_name[i]);
         $("p").append("   ");

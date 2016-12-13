@@ -27,16 +27,12 @@ function click3() {
     <form name=Check method=post action="">
     <center>
     <h2>主界面</h2>
-     你好，
-     <%  
-              String name=request.getParameter("userName");  
-              session.setAttribute("userName",name);
-       %>
-       Your name is:<%=session.getAttribute("userName")%>
+     你好，<%=session.getAttribute("userName")%>:
+     <p>
     <input type=button value=重新登录  onclick="click3()">
     <input type=submit value=建立活动 onclick="click2()">
     <input type=button value=查询活动  onclick="click1()">
-    
+    </p>
     </center>
     </form>
 </body>

@@ -52,7 +52,7 @@ SQL_word word = new SQL_word();
                 Joiner jo=new Joiner();
                 jo.setActivity(rs.getString("activity"));
                 jo.setIdeal(rs.getFloat("ideal_cost"));
-                System.out.println("ideal1:" + jo.getIdeal());
+                System.out.println("ideal:" + jo.getIdeal());
                 jo.setReal(rs.getFloat("real_cost"));
                 System.out.println("real" + jo.getReal());
                 pay = jo.getReal() - jo.getIdeal();

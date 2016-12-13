@@ -46,16 +46,15 @@ function delpin() {
             </tr>
             <tr>
                 <td>请选择活动模式：
-                    <input type="radio" name="act_type" value="活动后结账" checked="checked" />活动后结账
-                    <input type="radio" name="act_type" value="活动前预估" />活动前预估
+                    <input type="radio" name="actType" value="after" checked="checked" />活动后结账
+                    <input type="radio" name="actType" value="before" />活动前预估
                 </td>
             </tr>
             <tr>
                 <td>请选择支付策略：
-                    <input type="radio" name="pay_type" value="标准AA制" checked="checked" />标准AA制
-                    <input type="radio" name="pay_type" value="取整AA制" />取整AA制
-                    <input type="radio" name="pay_type" value="女神免单" />女神免单
-                    <input type="radio" name="pay_type" value="自定义支付" />自定义支付
+                    <input type="radio" name="payType" value="standard" checked="checked" />标准AA制
+                    <input type="radio" name="payType" value="restFree" />舍零AA制
+                    <input type="radio" name="payType" value="selfSet" />自定义支付
                 </td>
             </tr>
             <tr align="center">
