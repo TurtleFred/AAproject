@@ -18,11 +18,12 @@ import com.opensymphony.xwork2.ActionSupport;
  * @author Baoxuan
  */
 public class Log_Reg extends ActionSupport {
-
+    
     private static final long serialVersionUID = 1L;
 
     private String            userName;
     private String            passWord;
+    private String            email;
     private String            resultMsg;
     private int               resultInt;
     
@@ -47,7 +48,7 @@ public class Log_Reg extends ActionSupport {
         } 
         
         else {
-            resultInt = regImpl.regist(userName, passWord);
+            resultInt = regImpl.regist(userName, passWord, email);
             if (1 == resultInt) {
                 // 1. 将用户信息保存到Session中。
                 session.put("userName", userName);
@@ -64,6 +65,7 @@ public class Log_Reg extends ActionSupport {
 
     // 登录 对应jsp：login.jsp
     public String login() {
+        System.out.println("userName is:");
         resultMsg = null;
         // 对用户的输入格式进行验证
         if ("".equals(userName) || userName == null) {
@@ -108,6 +110,14 @@ public class Log_Reg extends ActionSupport {
         this.passWord = passWord;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
     public String getResultMsg() {
         return resultMsg;
     }

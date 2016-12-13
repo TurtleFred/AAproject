@@ -13,9 +13,9 @@ public class SQL_word {
     
     //注册相关sql语句
     //user表插入数据
-    public String Insert_User(String userName , String passWord) {
-        String sql = "insert into user(userName,passWord) " + " values (" + "'"
-                + userName + "','" + passWord + "')";
+    public String Insert_User(String userName , String passWord, String email) {
+        String sql = "insert into user(userName,passWord,email) " + " values (" + "'"
+                + userName + "','" + passWord + "','" + email + "')";
         return sql;
     }
     

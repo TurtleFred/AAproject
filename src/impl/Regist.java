@@ -23,8 +23,8 @@ public class Regist {
     }
     
     //×¢²áÒµÎñ£¬insert
-    public int regist(String userName, String passWord) {
-        int count = insertConn.save(word.Insert_User(userName, passWord));
+    public int regist(String userName, String passWord , String email) {
+        int count = insertConn.save(word.Insert_User(userName, passWord , email));
         return count;
     }
 }

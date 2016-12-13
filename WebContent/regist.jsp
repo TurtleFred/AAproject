@@ -20,6 +20,10 @@
                     <td><input type="password" name="passWord" /></td>
                 </tr>
                 <tr>
+                    <td>邮件地址:</td>
+                    <td><input type="text" name="email" /></td>
+                </tr>
+                <tr>
                     <td><input type="submit" value="提交"/></td>
                 </tr>
             </table>

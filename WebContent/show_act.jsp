@@ -7,6 +7,7 @@
 <title>活动</title>
 </head>
 <script src="https://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
+
 </script>
 <script>
 function addpeople(a) {
@@ -14,21 +15,31 @@ function addpeople(a) {
         
     var new_name = new Array(a);
     var new_ideal = new Array(a);
+    var new_real = new Array(a);
     for (i=0;i<a;i++) {
         
         new_name[i] = document.createElement("input");
+        new_real[i] = document.createElement("input");
         new_ideal[i] = document.createElement("input");
         
         new_name[i].type="text";
         new_name[i].placeholder="在此添加成员";
         new_name[i].name="pName";
+        
+        new_real[i].type="text";
+        new_real[i].size=6;
+        new_real[i].name="realCostt";
+        new_real[i].placeholder="应付金额";
+        
+        
         new_ideal[i].type="text";
         new_ideal[i].size=6;
-        new_ideal[i].name="realCostt";
-        	new_ideal[i].placeholder="应付金额";
+        new_ideal[i].name="idealCostt";
+        new_ideal[i].placeholder="应付金额";
         
         $("p").append(new_name[i]);
-        $("p").append("   ");
+        $("p").append("");
+        $("p").append(new_real[i]);
         $("p").append(new_ideal[i]);
         $("p").append("<br>");
     }
@@ -39,6 +50,7 @@ function addpeople(a) {
 
 <body>
 <form action="createJoiner.action" method="post">
+
     <table align="center">
         <caption>
                <b>建立活动</b>
@@ -56,7 +68,7 @@ function addpeople(a) {
             </tr>
             <tr><td>请确认活动信息后选择操作：</td></tr>
             
-            <tr><td><input type=button value="添加人员" id="addp" style="display:none" onclick=addpeople(1)><p><script>addpeople(people)</script></p></td></tr>
+            <tr><td><input type=button value="添加人员" id="addp" style="display:none" onclick=addpeople(1)><p><script>addpeople(6)</script></p></td></tr>
             
             <tr align="center">
                 <td colspan="2"><input type="button" value="重新编辑" onclick="location='create_act.jsp'"/></td>
