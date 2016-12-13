@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <constant name="struts.i18n.encoding" value="UTF-8" /> 
+    <package name="action" extends="struts-default">
+        <action name="login" class="action.Log_Reg" method="login">
+            <result name="checkFailure">/error.jsp</result>
+            <result name="loginFailure">/error.jsp</result>
+            <result name="loginSuccess">/main.jsp</result>
+        </action>
+        <action name="regist" class="action.Log_Reg" method="regist">
+            <result name="registerFailure">/error.jsp</result>
+            <result name="registerSuccess">/login.jsp</result>
+        </action>
+        <action name="create" class="action.Act" method="create">
+            <result name="checkFailure">/error.jsp</result>
+            <result name="createSuccess">/show_act.jsp</result>
+        </action>
+        <action name="createJoiner" class="action.Act" method="createJoiner">
+            <result name="checkFailure">/error.jsp</result>
+            <result name="createJSuccess">/main.jsp</result>
+        </action>
+        <action name="check_act" class="action.Check" method="check_act">
+            <result name="checkFailure">/error.jsp</result>
+            <result name="checkSuccess">/check_act.jsp</result>
+        </action>
+        
+    </package>
+</struts>
